@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MainNewsViewController.h
 //  GLNews
 //
 //  Created by Admin on 06.05.15.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
+@interface MainNewsViewController : UIViewController
 
 @end
-
