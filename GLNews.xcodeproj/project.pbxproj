@@ -11,6 +11,10 @@
 		847CCA421AF9B0D100810019 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CCA411AF9B0D100810019 /* AppDelegate.m */; };
 		847CCA4A1AF9B0D100810019 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 847CCA491AF9B0D100810019 /* Images.xcassets */; };
 		847CCA591AF9B0D100810019 /* GLNewsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 847CCA581AF9B0D100810019 /* GLNewsTests.m */; };
+		84BF0DEB1AF9F3E8004AB5CB /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF0DE61AF9F3E8004AB5CB /* TFHpple.m */; };
+		84BF0DEC1AF9F3E8004AB5CB /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF0DE81AF9F3E8004AB5CB /* TFHppleElement.m */; };
+		84BF0DED1AF9F3E8004AB5CB /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF0DEA1AF9F3E8004AB5CB /* XPathQuery.m */; };
+		84BF0DEF1AF9F516004AB5CB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF0DEE1AF9F516004AB5CB /* libxml2.dylib */; };
 		84C688ED1AF9DDDE00CCAB96 /* MainTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688EB1AF9DDDE00CCAB96 /* MainTableCell.m */; };
 		84C688EE1AF9DDDE00CCAB96 /* MainTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C688EC1AF9DDDE00CCAB96 /* MainTableCell.xib */; };
 		84C688F71AF9E2EF00CCAB96 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688F51AF9E2EF00CCAB96 /* MainViewController.m */; };
@@ -41,6 +45,13 @@
 		847CCA521AF9B0D100810019 /* GLNewsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GLNewsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		847CCA571AF9B0D100810019 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		847CCA581AF9B0D100810019 /* GLNewsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GLNewsTests.m; sourceTree = "<group>"; };
+		84BF0DE51AF9F3E8004AB5CB /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		84BF0DE61AF9F3E8004AB5CB /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		84BF0DE71AF9F3E8004AB5CB /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		84BF0DE81AF9F3E8004AB5CB /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		84BF0DE91AF9F3E8004AB5CB /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		84BF0DEA1AF9F3E8004AB5CB /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		84BF0DEE1AF9F516004AB5CB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
 		84C688EA1AF9DDDE00CCAB96 /* MainTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableCell.h; sourceTree = "<group>"; };
 		84C688EB1AF9DDDE00CCAB96 /* MainTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableCell.m; sourceTree = "<group>"; };
 		84C688EC1AF9DDDE00CCAB96 /* MainTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableCell.xib; sourceTree = "<group>"; };
@@ -59,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84BF0DEF1AF9F516004AB5CB /* libxml2.dylib in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -75,6 +87,7 @@
 		847CCA301AF9B0D100810019 = {
 			isa = PBXGroup;
 			children = (
+				84BF0DEE1AF9F516004AB5CB /* libxml2.dylib */,
 				847CCA3B1AF9B0D100810019 /* GLNews */,
 				847CCA551AF9B0D100810019 /* GLNewsTests */,
 				847CCA3A1AF9B0D100810019 /* Products */,
@@ -93,6 +106,8 @@
 		847CCA3B1AF9B0D100810019 /* GLNews */ = {
 			isa = PBXGroup;
 			children = (
+				84BF0DE41AF9F3AA004AB5CB /* hpple */,
+				84BF0DE31AF9F361004AB5CB /* Model */,
 				84C688FC1AF9E94800CCAB96 /* news3.jpg */,
 				84C688FD1AF9E94800CCAB96 /* news2.jpg */,
 				84C688FE1AF9E94800CCAB96 /* news1.jpg */,
@@ -106,8 +121,6 @@
 				84C688F41AF9E2EF00CCAB96 /* MainViewController.h */,
 				84C688F51AF9E2EF00CCAB96 /* MainViewController.m */,
 				84C688F61AF9E2EF00CCAB96 /* MainViewController.xib */,
-				84C688F91AF9E70C00CCAB96 /* NewsElement.h */,
-				84C688FA1AF9E70C00CCAB96 /* NewsElement.m */,
 			);
 			path = GLNews;
 			sourceTree = "<group>";
@@ -136,6 +149,28 @@
 				847CCA571AF9B0D100810019 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		84BF0DE31AF9F361004AB5CB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				84C688F91AF9E70C00CCAB96 /* NewsElement.h */,
+				84C688FA1AF9E70C00CCAB96 /* NewsElement.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		84BF0DE41AF9F3AA004AB5CB /* hpple */ = {
+			isa = PBXGroup;
+			children = (
+				84BF0DE51AF9F3E8004AB5CB /* TFHpple.h */,
+				84BF0DE61AF9F3E8004AB5CB /* TFHpple.m */,
+				84BF0DE71AF9F3E8004AB5CB /* TFHppleElement.h */,
+				84BF0DE81AF9F3E8004AB5CB /* TFHppleElement.m */,
+				84BF0DE91AF9F3E8004AB5CB /* XPathQuery.h */,
+				84BF0DEA1AF9F3E8004AB5CB /* XPathQuery.m */,
+			);
+			name = hpple;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -242,6 +277,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				84C688ED1AF9DDDE00CCAB96 /* MainTableCell.m in Sources */,
+				84BF0DEC1AF9F3E8004AB5CB /* TFHppleElement.m in Sources */,
+				84BF0DED1AF9F3E8004AB5CB /* XPathQuery.m in Sources */,
+				84BF0DEB1AF9F3E8004AB5CB /* TFHpple.m in Sources */,
 				84C688FB1AF9E70C00CCAB96 /* NewsElement.m in Sources */,
 				847CCA421AF9B0D100810019 /* AppDelegate.m in Sources */,
 				847CCA3F1AF9B0D100810019 /* main.m in Sources */,
@@ -304,6 +342,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = " $(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -341,6 +380,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				HEADER_SEARCH_PATHS = " $(SDKROOT)/usr/include/libxml2";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;

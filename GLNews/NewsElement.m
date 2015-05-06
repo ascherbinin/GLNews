@@ -10,9 +10,9 @@
 
 @implementation NewsElement
 
-@synthesize imageName;
-@synthesize titleText;
-@synthesize descriptionText;
+@synthesize imageName = image;
+@synthesize titleText = title;
+@synthesize descriptionText = description;
 
 @end
 

@@ -10,7 +10,7 @@
 
 @interface MainTableCell : UITableViewCell
 @property (strong, nonatomic) IBOutlet UIImageView *imageNews;
-@property (strong, nonatomic) IBOutlet UILabel *titleNews;
-@property (strong, nonatomic) IBOutlet UILabel *descriptionNews;
+@property (strong, retain) IBOutlet UILabel *titleNews;
+@property (strong, retain) IBOutlet UILabel *descriptionNews;
 
 @end

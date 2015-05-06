@@ -15,12 +15,16 @@
 
 @implementation AppDelegate
 
+@synthesize navigationController = _navigationController;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-     MainViewController *viewCell = [[MainViewController alloc] init ];
-    self.window.rootViewController = viewCell;
+    MainViewController *mainViewController = [[MainViewController alloc] initWithNibName:@"MainViewController" bundle:nil];
+    
+    self.navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
+    self.window.rootViewController = self.navigationController;
+   
     
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
