@@ -40,7 +40,7 @@ NSMutableArray *objects;
     
     TFHpple *newsParser = [TFHpple hppleWithHTMLData:newsHtmlData];
     
-    NSString *newsXpathQueryString = @"//h2[@class='topic-title word-wrap']/a";
+    NSString *newsXpathQueryString = @"//div[@class='topic-content text']";
   
     NSArray *newsNodes = [newsParser searchWithXPathQuery:newsXpathQueryString];
     
@@ -48,12 +48,19 @@ NSMutableArray *objects;
     NSMutableArray *newNews = [[NSMutableArray alloc] initWithCapacity:0];
     for (TFHppleElement *element in newsNodes){
         NewsElement *ne = [[NewsElement alloc]init];
-        
         [newNews addObject:ne];
         
-        ne.titleText = [[element firstChild]content];
-        ne.descriptionText = [element objectForKey:@"href"];
-
+//        for (TFHppleElement *child in element.children) {
+//           if([child.tagName isEqualToString:@"h2"])
+//           {
+//               ne.titleText = [[child firstChild]content];
+//
+//           }
+//            
+//        }
+               NSString* temp = [[element firstChild]content];
+               ne.descriptionText =[temp stringByTrimmingCharactersInSet:
+                                    [NSCharacterSet whitespaceAndNewlineCharacterSet]];
     }
     objects = newNews;
     
