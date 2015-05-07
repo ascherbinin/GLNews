@@ -72,11 +72,12 @@ NSMutableArray *objects;
           //  (NSLog(@"Description element - %@",[[titleElement firstChildWithTagName:@"time"]content])) ;
           
             ne.titleText =[[[titleElement firstChildWithClassName:@"topic-title word-wrap"] content]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            
             ne.descriptionText =[[descriptionElement content] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            
             NSString *dateString = [[[titleElement firstChildWithTagName:@"time"]content]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             NSScanner *scanner = [[NSScanner alloc] initWithString:dateString];
             [scanner scanUpToString:@"," intoString:nil];
-            
             ne.dateNewsText = [dateString substringWithRange:NSMakeRange(0, scanner.scanLocation)];
             
             TFHppleElement *imageNode = [[imageElement firstChildWithTagName:@"a"] firstChildWithTagName:@"img"];

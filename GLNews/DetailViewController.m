@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "NewsElement.h"
 #import "UIImageView+AFNetworking.h"
+#import "TFHpple.h"
 
 @interface DetailViewController ()  <UIActionSheetDelegate>
 
@@ -73,9 +74,45 @@
     }
     self.navigationItem.title = _newsElementDetail.dateNewsText;
     self.titleLable.text = _newsElementDetail.titleText;
-    self.textView.text = _newsElementDetail.descriptionText;
-    NSArray* images = [_newsElementDetail imagesFromContent:_newsElementDetail.imageUrl];
-    NSString *imageStringURL = [images objectAtIndex:0];
+    
+    NSURL *articleUrl = _newsElementDetail.articleUrl;
+    NSData *articleHtmlData = [NSData dataWithContentsOfURL:articleUrl];
+    
+    TFHpple *articleParser = [TFHpple hppleWithHTMLData:articleHtmlData];
+    
+    NSString *articleXpathQueryString = @"//div[@class='topic-content text']";
+
+    //    NSMutableArray *imagesArray = [[NSMutableArray alloc] init];
+    
+    NSArray *articleNodes = [articleParser searchWithXPathQuery:articleXpathQueryString];
+   for (TFHppleElement *element in articleNodes)
+   {
+        
+//        TFHppleElement *imageUrl =  [element firstChildWithTagName:@"img"];
+//        [imagesArray addObject:[imageUrl objectForKey:@"src"]];
+//        for (TFHppleElement *child in element.children) {
+//            if ([child.tagName isEqualToString:@"img"]) {
+//                @try {
+//                }
+//                @catch (NSException *e) {}
+//            }
+//        }
+       
+      // NSString* tempStr = [[element content] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+      // NSLog(@"%@",[tempStr stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]]);
+       //NSMutableString* temp = [NSMutableString stringWithString:[element raw]];
+       //[temp replaceOccurrencesOfString:@"<br/>" withString:@" " options:NSCaseInsensitiveSearch range:NSMakeRange(0, temp.length)];
+       //NSLog(@"%@", temp);
+       self.textView.text = [[element content] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+
+    }
+    
+    
+    
+    
+    NSArray* image = [_newsElementDetail imagesFromContent:_newsElementDetail.imageUrl];
+    NSString *imageStringURL = [image objectAtIndex:0];
     NSURL* imageURL = [NSURL URLWithString: imageStringURL];
     [self.imageView setImageWithURL: imageURL];
     NSLog(@"%@",_newsElementDetail.imageName);
