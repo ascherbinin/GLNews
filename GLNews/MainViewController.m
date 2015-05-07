@@ -10,6 +10,8 @@
 #import "NewsElement.h"
 #import "MainTableCell.h"
 #import "TFHpple.h"
+#import "DetailViewController.h"
+#import "UIImageView+AFNetworking.h"
 
 @interface MainViewController ()
 {
@@ -65,6 +67,7 @@ NSMutableArray *objects;
             TFHppleElement *subelement = [element firstChildWithClassName:@"wraps out-topic"];
             TFHppleElement *descriptionElement = [subelement firstChildWithClassName:@"topic-content text"];
             TFHppleElement *titleElement =[subelement firstChildWithClassName:@"topic-header"] ;
+            TFHppleElement *imageElement = [element firstChildWithClassName:@"preview"];
             
           //  (NSLog(@"Description element - %@",[[titleElement firstChildWithTagName:@"time"]content])) ;
           
@@ -74,9 +77,8 @@ NSMutableArray *objects;
             NSScanner *scanner = [[NSScanner alloc] initWithString:dateString];
             [scanner scanUpToString:@"," intoString:nil];
             ne.dateNewsText = [dateString substringWithRange:NSMakeRange(0, scanner.scanLocation)];
-            
-            
-               
+            TFHppleElement *imageNode = [[imageElement firstChildWithTagName:@"a"] firstChildWithTagName:@"img"];
+            ne.content = [imageNode objectForKey:@"src"];
             
     }
     objects = newNews;
@@ -104,31 +106,14 @@ NSMutableArray *objects;
     return [objects count];
 }
 
+-(void) tableView:(UITableView*)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [self.navigationController pushViewController:self.detailViewController animated:YES];
+}
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
-    
-//    static NSString *CellIdentifier = @"Cell";
-//    
-//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
-//    if (cell == nil) {
-//        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyle reuseIdentifier:CellIdentifier];
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-//    }
-//    
-//    
-//    NewsElement *news = [objects objectAtIndex:indexPath.row];
-//    cell.textLabel.text = news.titleText;
-//    cell.detailTextLabel.text = news.descriptionText;
-//    
-//    
-//    return cell;
-    
-    
-    
-    
-    
-   
-    
+  
     static NSString *CellIdentifier = @"NewsCell";
     MainTableCell *cell = (MainTableCell*) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
 
@@ -140,7 +125,10 @@ NSMutableArray *objects;
     }
     
     NewsElement *news = [objects objectAtIndex:indexPath.row];
-    cell.imageNews.image = [UIImage imageNamed:@"news3.jpg"];
+    NSArray* images = [news imagesFromContent:news.content];
+    NSString *imageStringURL = [images objectAtIndex:0];
+    NSURL* imageURL = [NSURL URLWithString: imageStringURL];
+    [cell.imageNews setImageWithURL: imageURL];
     cell.titleNews.text = news.titleText;
     cell.descriptionNews.text = news.descriptionText;
     cell.dateNews.text = news.dateNewsText;
@@ -149,6 +137,26 @@ NSMutableArray *objects;
     NSLog(@"%d", indexPath.row);
    
     return cell;
+}
+
+#pragma mark - Table view delegate
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    // Navigation logic may go here. Create and push another view controller.
+    // If you want to push another view upon tapping one of the cells on your table.
+    
+    
+    DetailViewController *detailViewController = [[DetailViewController alloc] initWithNibName:@"DetailViewController" bundle:nil];
+    
+    if(indexPath)
+    {
+        NewsElement *news = [objects objectAtIndex:indexPath.row];
+        [detailViewController setDetails:news];
+    }
+    // ...
+    // Pass the selected object to the new view controller.
+    [self.navigationController pushViewController:detailViewController animated:YES];
+    
 }
 
 /*
@@ -188,19 +196,7 @@ NSMutableArray *objects;
  }
  */
 
-#pragma mark - Table view delegate
 
-- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Navigation logic may go here. Create and push another view controller.
-    // If you want to push another view upon tapping one of the cells on your table.
-    
-    /*
-     <#DetailViewController#> *detailViewController = [[<#DetailViewController#> alloc] initWithNibName:@"<#Nib name#>" bundle:nil];
-     // ...
-     // Pass the selected object to the new view controller.
-     [self.navigationController pushViewController:detailViewController animated:YES];
-     */
-}
 
 /*
 #pragma mark - Navigation

@@ -9,8 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @interface NewsElement : NSObject
+
 @property (nonatomic, copy) NSString *imageName;
+@property (nonatomic, copy) NSString *content;
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, copy) NSString *descriptionText;
 @property (nonatomic, copy) NSString *dateNewsText;
+
+-(NSArray *)imagesFromContent:(NSString*)contentStr;
+-(NSArray *)imagesFromHTMLString:(NSString *)htmlstr;
 @end
