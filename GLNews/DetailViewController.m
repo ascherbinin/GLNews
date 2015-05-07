@@ -10,7 +10,7 @@
 #import "NewsElement.h"
 #import "UIImageView+AFNetworking.h"
 
-@interface DetailViewController ()
+@interface DetailViewController ()  <UIActionSheetDelegate>
 
 @end
 
@@ -18,7 +18,12 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Open"
+                                                             style:UIBarButtonItemStylePlain
+                                                            target:self
+                                                            action:@selector(openNews)];
+    self.navigationItem.rightBarButtonItem = item;
+    
     [self reloadData];
 }
 
@@ -37,6 +42,29 @@
 }
 
 
+
+-(void)openNews
+{
+   
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Назад" destructiveButtonTitle:nil otherButtonTitles:@"Открыть",@"Открыть в браузере", nil];
+    
+    [actionSheet showInView:self.view];
+}
+
+-(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    switch (buttonIndex) {
+        case 0:
+            
+            break;
+        case 1:
+            [[UIApplication sharedApplication] openURL:_newsElementDetail.articleUrl];
+            break;
+        default:
+            break;
+    }
+}
+
 -(void) reloadData
 {
     if(!_newsElementDetail)
@@ -46,12 +74,13 @@
     self.navigationItem.title = _newsElementDetail.dateNewsText;
     self.titleLable.text = _newsElementDetail.titleText;
     self.textView.text = _newsElementDetail.descriptionText;
-    NSArray* images = [_newsElementDetail imagesFromContent:_newsElementDetail.content];
+    NSArray* images = [_newsElementDetail imagesFromContent:_newsElementDetail.imageUrl];
     NSString *imageStringURL = [images objectAtIndex:0];
     NSURL* imageURL = [NSURL URLWithString: imageStringURL];
     [self.imageView setImageWithURL: imageURL];
     NSLog(@"%@",_newsElementDetail.imageName);
 }
+
 /*
 #pragma mark - Navigation
 

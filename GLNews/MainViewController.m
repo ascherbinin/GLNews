@@ -76,9 +76,16 @@ NSMutableArray *objects;
             NSString *dateString = [[[titleElement firstChildWithTagName:@"time"]content]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             NSScanner *scanner = [[NSScanner alloc] initWithString:dateString];
             [scanner scanUpToString:@"," intoString:nil];
+            
             ne.dateNewsText = [dateString substringWithRange:NSMakeRange(0, scanner.scanLocation)];
+            
             TFHppleElement *imageNode = [[imageElement firstChildWithTagName:@"a"] firstChildWithTagName:@"img"];
-            ne.content = [imageNode objectForKey:@"src"];
+            ne.imageUrl = [imageNode objectForKey:@"src"];
+            
+            NSString *urlString = [[imageElement firstChildWithTagName:@"a"] objectForKey:@"href"];
+            ne.articleUrl =[NSURL URLWithString:urlString];
+            
+            
             
     }
     objects = newNews;
@@ -125,7 +132,7 @@ NSMutableArray *objects;
     }
     
     NewsElement *news = [objects objectAtIndex:indexPath.row];
-    NSArray* images = [news imagesFromContent:news.content];
+    NSArray* images = [news imagesFromContent:news.imageUrl];
     NSString *imageStringURL = [images objectAtIndex:0];
     NSURL* imageURL = [NSURL URLWithString: imageStringURL];
     [cell.imageNews setImageWithURL: imageURL];

@@ -16,7 +16,8 @@
 @synthesize titleText = title;
 @synthesize descriptionText = description;
 @synthesize dateNewsText = date;
-@synthesize content = content;
+@synthesize imageUrl = imageUrl;
+@synthesize articleUrl = url;
 
 
 

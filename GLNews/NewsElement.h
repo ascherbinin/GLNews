@@ -11,10 +11,11 @@
 @interface NewsElement : NSObject
 
 @property (nonatomic, copy) NSString *imageName;
-@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSString *imageUrl;
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, copy) NSString *descriptionText;
 @property (nonatomic, copy) NSString *dateNewsText;
+@property (nonatomic, copy) NSURL *articleUrl;
 
 -(NSArray *)imagesFromContent:(NSString*)contentStr;
 -(NSArray *)imagesFromHTMLString:(NSString *)htmlstr;
