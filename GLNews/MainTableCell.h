@@ -12,5 +12,6 @@
 @property (strong, nonatomic) IBOutlet UIImageView *imageNews;
 @property (strong, retain) IBOutlet UILabel *titleNews;
 @property (strong, retain) IBOutlet UILabel *descriptionNews;
+@property (strong, retain) IBOutlet UILabel *dateNews;
 
 @end

@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>EA8ADCDF-CF7E-4678-9E2E-3B1654D5DFA8</string>
 	<key>IDESourceControlProjectName</key>
-	<string>project</string>
+	<string>GLNews</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>0B8549ECAC70B175A291EBB2E392B9231CD76E38</key>
 		<string>https://github.com/ascherbinin/GLNews.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>GLNews.xcodeproj/project.xcworkspace</string>
+	<string>GLNews.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>0B8549ECAC70B175A291EBB2E392B9231CD76E38</key>

@@ -13,6 +13,7 @@
 @synthesize imageName = image;
 @synthesize titleText = title;
 @synthesize descriptionText = description;
+@synthesize dateNewsText = date;
 
 @end
 

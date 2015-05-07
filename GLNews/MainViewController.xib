@@ -19,5 +19,13 @@
                 <outlet property="delegate" destination="-1" id="lyi-MJ-n4f"/>
             </connections>
         </tableView>
+        <navigationBar contentMode="scaleToFill" id="YL7-sR-ELq">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+            <items>
+                <navigationItem title="Новости" id="O0M-1M-4vZ"/>
+            </items>
+            <point key="canvasLocation" x="837" y="-96"/>
+        </navigationBar>
     </objects>
 </document>

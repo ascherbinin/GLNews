@@ -24,6 +24,7 @@ NSMutableArray *objects;
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationItem.title = @"Новости";
     [self loadNews];
 }
 
@@ -39,34 +40,50 @@ NSMutableArray *objects;
     NSData *newsHtmlData = [NSData dataWithContentsOfURL:newsUrl];
     
     TFHpple *newsParser = [TFHpple hppleWithHTMLData:newsHtmlData];
-    
-    NSString *newsXpathQueryString = @"//div[@class='topic-content text']";
+
+    NSString *newsXpathQueryString = @"//article";
   
     NSArray *newsNodes = [newsParser searchWithXPathQuery:newsXpathQueryString];
     
+    if ([newsNodes count] == 0)
+        NSLog(@"Нету node");
+    else
+    {
+        NSLog(@"Найдено %d корневых элементов", [newsNodes count]);
    
-    NSMutableArray *newNews = [[NSMutableArray alloc] initWithCapacity:0];
-    for (TFHppleElement *element in newsNodes){
-        NewsElement *ne = [[NewsElement alloc]init];
-        [newNews addObject:ne];
         
-//        for (TFHppleElement *child in element.children) {
-//           if([child.tagName isEqualToString:@"h2"])
-//           {
-//               ne.titleText = [[child firstChild]content];
-//
-//           }
-//            
-//        }
-               NSString* temp = [[element firstChild]content];
-               ne.descriptionText =[temp stringByTrimmingCharactersInSet:
-                                    [NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        
+        NSMutableArray *newNews = [[NSMutableArray alloc] initWithCapacity:0];
+        for (TFHppleElement *element in newsNodes){
+            
+            
+            
+            
+            NewsElement *ne = [[NewsElement alloc]init];
+            [newNews addObject:ne];
+            
+            TFHppleElement *subelement = [element firstChildWithClassName:@"wraps out-topic"];
+            TFHppleElement *descriptionElement = [subelement firstChildWithClassName:@"topic-content text"];
+            TFHppleElement *titleElement =[subelement firstChildWithClassName:@"topic-header"] ;
+            
+          //  (NSLog(@"Description element - %@",[[titleElement firstChildWithTagName:@"time"]content])) ;
+          
+            ne.titleText =[[[titleElement firstChildWithClassName:@"topic-title word-wrap"] content]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            ne.descriptionText =[[descriptionElement content] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            NSString *dateString = [[[titleElement firstChildWithTagName:@"time"]content]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+            NSScanner *scanner = [[NSScanner alloc] initWithString:dateString];
+            [scanner scanUpToString:@"," intoString:nil];
+            ne.dateNewsText = [dateString substringWithRange:NSMakeRange(0, scanner.scanLocation)];
+            
+            
+               
+            
     }
     objects = newNews;
     
     [self.tableView reloadData];
     
-    
+    }
 }
 
 #pragma mark - Table view data source
@@ -76,9 +93,9 @@ NSMutableArray *objects;
 }
 
 
--(CGFloat) tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
+-(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 90.0;
+    return 100;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
@@ -126,8 +143,10 @@ NSMutableArray *objects;
     cell.imageNews.image = [UIImage imageNamed:@"news3.jpg"];
     cell.titleNews.text = news.titleText;
     cell.descriptionNews.text = news.descriptionText;
+    cell.dateNews.text = news.dateNewsText;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
    
+    NSLog(@"%d", indexPath.row);
    
     return cell;
 }

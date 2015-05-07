@@ -15,6 +15,8 @@
 		84BF0DEC1AF9F3E8004AB5CB /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF0DE81AF9F3E8004AB5CB /* TFHppleElement.m */; };
 		84BF0DED1AF9F3E8004AB5CB /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 84BF0DEA1AF9F3E8004AB5CB /* XPathQuery.m */; };
 		84BF0DEF1AF9F516004AB5CB /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF0DEE1AF9F516004AB5CB /* libxml2.dylib */; };
+		84C130311AFB2063009B9D75 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C1302F1AFB2063009B9D75 /* DetailViewController.m */; };
+		84C130321AFB2063009B9D75 /* DetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C130301AFB2063009B9D75 /* DetailViewController.xib */; };
 		84C688ED1AF9DDDE00CCAB96 /* MainTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688EB1AF9DDDE00CCAB96 /* MainTableCell.m */; };
 		84C688EE1AF9DDDE00CCAB96 /* MainTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C688EC1AF9DDDE00CCAB96 /* MainTableCell.xib */; };
 		84C688F71AF9E2EF00CCAB96 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688F51AF9E2EF00CCAB96 /* MainViewController.m */; };
@@ -52,6 +54,9 @@
 		84BF0DE91AF9F3E8004AB5CB /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
 		84BF0DEA1AF9F3E8004AB5CB /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
 		84BF0DEE1AF9F516004AB5CB /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		84C1302E1AFB2063009B9D75 /* DetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		84C1302F1AFB2063009B9D75 /* DetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		84C130301AFB2063009B9D75 /* DetailViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailViewController.xib; sourceTree = "<group>"; };
 		84C688EA1AF9DDDE00CCAB96 /* MainTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableCell.h; sourceTree = "<group>"; };
 		84C688EB1AF9DDDE00CCAB96 /* MainTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableCell.m; sourceTree = "<group>"; };
 		84C688EC1AF9DDDE00CCAB96 /* MainTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableCell.xib; sourceTree = "<group>"; };
@@ -121,6 +126,9 @@
 				84C688F41AF9E2EF00CCAB96 /* MainViewController.h */,
 				84C688F51AF9E2EF00CCAB96 /* MainViewController.m */,
 				84C688F61AF9E2EF00CCAB96 /* MainViewController.xib */,
+				84C1302E1AFB2063009B9D75 /* DetailViewController.h */,
+				84C1302F1AFB2063009B9D75 /* DetailViewController.m */,
+				84C130301AFB2063009B9D75 /* DetailViewController.xib */,
 			);
 			path = GLNews;
 			sourceTree = "<group>";
@@ -255,6 +263,7 @@
 			files = (
 				84C689001AF9E94800CCAB96 /* news2.jpg in Resources */,
 				84C688EE1AF9DDDE00CCAB96 /* MainTableCell.xib in Resources */,
+				84C130321AFB2063009B9D75 /* DetailViewController.xib in Resources */,
 				84C688F81AF9E2EF00CCAB96 /* MainViewController.xib in Resources */,
 				84C689011AF9E94800CCAB96 /* news1.jpg in Resources */,
 				84C688FF1AF9E94800CCAB96 /* news3.jpg in Resources */,
@@ -278,6 +287,7 @@
 			files = (
 				84C688ED1AF9DDDE00CCAB96 /* MainTableCell.m in Sources */,
 				84BF0DEC1AF9F3E8004AB5CB /* TFHppleElement.m in Sources */,
+				84C130311AFB2063009B9D75 /* DetailViewController.m in Sources */,
 				84BF0DED1AF9F3E8004AB5CB /* XPathQuery.m in Sources */,
 				84BF0DEB1AF9F3E8004AB5CB /* TFHpple.m in Sources */,
 				84C688FB1AF9E70C00CCAB96 /* NewsElement.m in Sources */,

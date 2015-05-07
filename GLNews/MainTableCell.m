@@ -13,6 +13,7 @@
 @synthesize imageNews;
 @synthesize titleNews;
 @synthesize descriptionNews;
+@synthesize dateNews;
 
 - (void)awakeFromNib {
     // Initialization code

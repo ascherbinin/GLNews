@@ -12,4 +12,5 @@
 @property (nonatomic, copy) NSString *imageName;
 @property (nonatomic, copy) NSString *titleText;
 @property (nonatomic, copy) NSString *descriptionText;
+@property (nonatomic, copy) NSString *dateNewsText;
 @end
