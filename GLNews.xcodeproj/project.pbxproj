@@ -28,14 +28,13 @@
 		84C1314F1AFB4780009B9D75 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C131461AFB4780009B9D75 /* AFURLSessionManager.m */; };
 		84C131551AFB4E6D009B9D75 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C131541AFB4E6D009B9D75 /* UIImageView+AFNetworking.m */; };
 		84C131571AFC59CE009B9D75 /* RDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C131561AFC59CD009B9D75 /* RDHelper.m */; };
+		84C1315A1AFCA817009B9D75 /* glnews.png in Resources */ = {isa = PBXBuildFile; fileRef = 84C131591AFCA816009B9D75 /* glnews.png */; };
+		84C1315F1AFCA925009B9D75 /* Launch Screen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C1315E1AFCA925009B9D75 /* Launch Screen.xib */; };
 		84C688ED1AF9DDDE00CCAB96 /* MainTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688EB1AF9DDDE00CCAB96 /* MainTableCell.m */; };
 		84C688EE1AF9DDDE00CCAB96 /* MainTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C688EC1AF9DDDE00CCAB96 /* MainTableCell.xib */; };
 		84C688F71AF9E2EF00CCAB96 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688F51AF9E2EF00CCAB96 /* MainViewController.m */; };
 		84C688F81AF9E2EF00CCAB96 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C688F61AF9E2EF00CCAB96 /* MainViewController.xib */; };
 		84C688FB1AF9E70C00CCAB96 /* NewsElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688FA1AF9E70C00CCAB96 /* NewsElement.m */; };
-		84C688FF1AF9E94800CCAB96 /* news3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84C688FC1AF9E94800CCAB96 /* news3.jpg */; };
-		84C689001AF9E94800CCAB96 /* news2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84C688FD1AF9E94800CCAB96 /* news2.jpg */; };
-		84C689011AF9E94800CCAB96 /* news1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 84C688FE1AF9E94800CCAB96 /* news1.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -91,6 +90,8 @@
 		84C131541AFB4E6D009B9D75 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "Libs/AFNetworking-master/UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = SOURCE_ROOT; };
 		84C131561AFC59CD009B9D75 /* RDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHelper.m; sourceTree = "<group>"; };
 		84C131581AFC5A10009B9D75 /* RDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDHelper.h; sourceTree = "<group>"; };
+		84C131591AFCA816009B9D75 /* glnews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glnews.png; sourceTree = "<group>"; };
+		84C1315E1AFCA925009B9D75 /* Launch Screen.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = "Launch Screen.xib"; sourceTree = "<group>"; };
 		84C688EA1AF9DDDE00CCAB96 /* MainTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableCell.h; sourceTree = "<group>"; };
 		84C688EB1AF9DDDE00CCAB96 /* MainTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableCell.m; sourceTree = "<group>"; };
 		84C688EC1AF9DDDE00CCAB96 /* MainTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableCell.xib; sourceTree = "<group>"; };
@@ -99,9 +100,6 @@
 		84C688F61AF9E2EF00CCAB96 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		84C688F91AF9E70C00CCAB96 /* NewsElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsElement.h; sourceTree = "<group>"; };
 		84C688FA1AF9E70C00CCAB96 /* NewsElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsElement.m; sourceTree = "<group>"; };
-		84C688FC1AF9E94800CCAB96 /* news3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = news3.jpg; path = ../../../Downloads/news3.jpg; sourceTree = "<group>"; };
-		84C688FD1AF9E94800CCAB96 /* news2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = news2.jpg; path = ../../../Downloads/news2.jpg; sourceTree = "<group>"; };
-		84C688FE1AF9E94800CCAB96 /* news1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = news1.jpg; path = ../../../Downloads/news1.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,12 +143,10 @@
 		847CCA3B1AF9B0D100810019 /* GLNews */ = {
 			isa = PBXGroup;
 			children = (
+				84C1315B1AFCA81E009B9D75 /* Resource */,
 				84C130331AFB473C009B9D75 /* Libs */,
 				84BF0DE41AF9F3AA004AB5CB /* hpple */,
 				84BF0DE31AF9F361004AB5CB /* Model */,
-				84C688FC1AF9E94800CCAB96 /* news3.jpg */,
-				84C688FD1AF9E94800CCAB96 /* news2.jpg */,
-				84C688FE1AF9E94800CCAB96 /* news1.jpg */,
 				847CCA401AF9B0D100810019 /* AppDelegate.h */,
 				847CCA411AF9B0D100810019 /* AppDelegate.m */,
 				847CCA491AF9B0D100810019 /* Images.xcassets */,
@@ -166,6 +162,7 @@
 				84C130301AFB2063009B9D75 /* DetailViewController.xib */,
 				84C131561AFC59CD009B9D75 /* RDHelper.m */,
 				84C131581AFC5A10009B9D75 /* RDHelper.h */,
+				84C1315E1AFCA925009B9D75 /* Launch Screen.xib */,
 			);
 			path = GLNews;
 			sourceTree = "<group>";
@@ -255,6 +252,22 @@
 			path = "AFNetworking-master/AFNetworking";
 			sourceTree = "<group>";
 		};
+		84C1315B1AFCA81E009B9D75 /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				84C1315D1AFCA832009B9D75 /* Images */,
+			);
+			name = Resource;
+			sourceTree = "<group>";
+		};
+		84C1315D1AFCA832009B9D75 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				84C131591AFCA816009B9D75 /* glnews.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -335,13 +348,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				84C689001AF9E94800CCAB96 /* news2.jpg in Resources */,
 				84C688EE1AF9DDDE00CCAB96 /* MainTableCell.xib in Resources */,
 				84C130321AFB2063009B9D75 /* DetailViewController.xib in Resources */,
 				84C688F81AF9E2EF00CCAB96 /* MainViewController.xib in Resources */,
-				84C689011AF9E94800CCAB96 /* news1.jpg in Resources */,
-				84C688FF1AF9E94800CCAB96 /* news3.jpg in Resources */,
+				84C1315A1AFCA817009B9D75 /* glnews.png in Resources */,
 				847CCA4A1AF9B0D100810019 /* Images.xcassets in Resources */,
+				84C1315F1AFCA925009B9D75 /* Launch Screen.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -94,7 +94,7 @@
     }
     else
     {
-        self.imageView.image = [UIImage imageNamed:@"news1.jpg"];
+        self.imageView.image = [UIImage imageNamed:@"glnews.png"];
     }
     
     NSLog(@"%@",_newsElementDetail.imageUrl);

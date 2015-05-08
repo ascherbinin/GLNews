@@ -70,7 +70,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <constraints>
-                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="469" id="kh3-ss-C1i">
+                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="400" id="kh3-ss-C1i">
                                             <variation key="heightClass=regular-widthClass=compact" constant="462"/>
                                         </constraint>
                                     </constraints>

@@ -166,7 +166,7 @@
     }
     else
     {
-        cell.imageNews.image = [UIImage imageNamed:@"news1.jpg"];
+        cell.imageNews.image = [UIImage imageNamed:@"glnews.png"];
     }
     cell.titleNews.text = news.titleText;
     cell.descriptionNews.text = news.descriptionText;
@@ -204,7 +204,7 @@
     // issue when dragin to the VERY last cell
     
     NSInteger totalRow = [tableView numberOfRowsInSection:indexPath.section];//first get total rows in that section by current indexPath.
-    if(indexPath.row == totalRow -1)
+    if(indexPath.row == totalRow -3)
     {
               NSLog([NSString stringWithFormat:@"Page Number - %d",pageNumber+1]);
             pageNumber += 1;
