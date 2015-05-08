@@ -12,21 +12,29 @@
 #import "TFHpple.h"
 #import "DetailViewController.h"
 #import "UIImageView+AFNetworking.h"
+#import "RDHelper.h"
 
 @interface MainViewController ()
 {
-NSMutableArray *objects;
+   
 }
 @end
 
 @implementation MainViewController
 
+
 @synthesize sampleTableView;
+@synthesize pageNumber;
+
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     self.navigationItem.title = @"Новости";
+    pageNumber =1;
+
     [self loadNews];
 }
 
@@ -36,33 +44,48 @@ NSMutableArray *objects;
 }
 
 
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
+{
+    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
+    if (self)
+    {
+        _objects = [[NSMutableArray alloc] init];
+    }
+    
+    return self;
+}
+
 -(void)loadNews
 {
-    NSURL *newsUrl = [NSURL URLWithString:@"http://live.goodline.info"];
-    NSData *newsHtmlData = [NSData dataWithContentsOfURL:newsUrl];
     
-    TFHpple *newsParser = [TFHpple hppleWithHTMLData:newsHtmlData];
-
-    NSString *newsXpathQueryString = @"//article";
+    NSURL *newsUrl = [NSURL URLWithString:[NSString stringWithFormat:@"http://live.goodline.info/guest/page%d",pageNumber]];
+   
   
-    NSArray *newsNodes = [newsParser searchWithXPathQuery:newsXpathQueryString];
+    NSArray *newsNodes = [RDHelper requestData:newsUrl xPathQueryStr:@"//article"];
+    
+    
+    //[newsParser searchWithXPathQuery:newsXpathQueryString];
+    
+    
     
     if ([newsNodes count] == 0)
         NSLog(@"Нету node");
     else
     {
-        NSLog(@"Найдено %d корневых элементов", [newsNodes count]);
+        NSLog(@"Найдено %lu корневых элементов", (unsigned long)[newsNodes count]);
    
         
         
-        NSMutableArray *newNews = [[NSMutableArray alloc] initWithCapacity:0];
+        //NSMutableArray *newNews = [[NSMutableArray alloc] initWithCapacity:0];
+        
         for (TFHppleElement *element in newsNodes){
             
             
             
             
             NewsElement *ne = [[NewsElement alloc]init];
-            [newNews addObject:ne];
+            
+            
             
             TFHppleElement *subelement = [element firstChildWithClassName:@"wraps out-topic"];
             TFHppleElement *descriptionElement = [subelement firstChildWithClassName:@"topic-content text"];
@@ -81,16 +104,21 @@ NSMutableArray *objects;
             ne.dateNewsText = [dateString substringWithRange:NSMakeRange(0, scanner.scanLocation)];
             
             TFHppleElement *imageNode = [[imageElement firstChildWithTagName:@"a"] firstChildWithTagName:@"img"];
+           
             ne.imageUrl = [imageNode objectForKey:@"src"];
             
-            NSString *urlString = [[imageElement firstChildWithTagName:@"a"] objectForKey:@"href"];
+           
+            
+            NSString *urlString = [[[titleElement firstChildWithTagName:@"h2"]firstChildWithTagName:@"a"] objectForKey:@"href"];
             ne.articleUrl =[NSURL URLWithString:urlString];
             
             
-            
+            [_objects addObject:ne];
     }
-    objects = newNews;
     
+        
+        
+        
     [self.tableView reloadData];
     
     }
@@ -111,13 +139,9 @@ NSMutableArray *objects;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
     // Return the number of rows in the section.
     // Usually the number of items in your array (the one that holds your list)
-    return [objects count];
+    return [_objects count];
 }
 
--(void) tableView:(UITableView*)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    [self.navigationController pushViewController:self.detailViewController animated:YES];
-}
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
     
@@ -132,17 +156,24 @@ NSMutableArray *objects;
         cell = [nib objectAtIndex:0];
     }
     
-    NewsElement *news = [objects objectAtIndex:indexPath.row];
+    NewsElement *news = [_objects objectAtIndex:indexPath.row];
     NSArray* images = [news imagesFromContent:news.imageUrl];
     NSString *imageStringURL = [images objectAtIndex:0];
     NSURL* imageURL = [NSURL URLWithString: imageStringURL];
+    if(imageURL != nil)
+    {
     [cell.imageNews setImageWithURL: imageURL];
+    }
+    else
+    {
+        cell.imageNews.image = [UIImage imageNamed:@"news1.jpg"];
+    }
     cell.titleNews.text = news.titleText;
     cell.descriptionNews.text = news.descriptionText;
     cell.dateNews.text = news.dateNewsText;
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
    
-    NSLog(@"%d", indexPath.row);
+    NSLog(@"%ld", (long)indexPath.row);
    
     return cell;
 }
@@ -158,7 +189,7 @@ NSMutableArray *objects;
     
     if(indexPath)
     {
-        NewsElement *news = [objects objectAtIndex:indexPath.row];
+        NewsElement *news = [_objects objectAtIndex:indexPath.row];
         [detailViewController setDetails:news];
     }
     // ...
@@ -166,6 +197,25 @@ NSMutableArray *objects;
     [self.navigationController pushViewController:detailViewController animated:YES];
     
 }
+
+
+-(void) tableView:(UITableView *)tableView willDisplayCell:(UITableViewCell *)cell forRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    // issue when dragin to the VERY last cell
+    
+    NSInteger totalRow = [tableView numberOfRowsInSection:indexPath.section];//first get total rows in that section by current indexPath.
+    if(indexPath.row == totalRow -1)
+    {
+              NSLog([NSString stringWithFormat:@"Page Number - %d",pageNumber+1]);
+            pageNumber += 1;
+            [self loadNews];
+        
+        
+        
+    }
+}
+
+
 
 /*
  // Override to support conditional editing of the table view.

@@ -27,6 +27,7 @@
 		84C1314E1AFB4780009B9D75 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C131441AFB4780009B9D75 /* AFURLResponseSerialization.m */; };
 		84C1314F1AFB4780009B9D75 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C131461AFB4780009B9D75 /* AFURLSessionManager.m */; };
 		84C131551AFB4E6D009B9D75 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C131541AFB4E6D009B9D75 /* UIImageView+AFNetworking.m */; };
+		84C131571AFC59CE009B9D75 /* RDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C131561AFC59CD009B9D75 /* RDHelper.m */; };
 		84C688ED1AF9DDDE00CCAB96 /* MainTableCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688EB1AF9DDDE00CCAB96 /* MainTableCell.m */; };
 		84C688EE1AF9DDDE00CCAB96 /* MainTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C688EC1AF9DDDE00CCAB96 /* MainTableCell.xib */; };
 		84C688F71AF9E2EF00CCAB96 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688F51AF9E2EF00CCAB96 /* MainViewController.m */; };
@@ -88,6 +89,8 @@
 		84C131461AFB4780009B9D75 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
 		84C131531AFB4E6D009B9D75 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImageView+AFNetworking.h"; path = "Libs/AFNetworking-master/UIKit+AFNetworking/UIImageView+AFNetworking.h"; sourceTree = SOURCE_ROOT; };
 		84C131541AFB4E6D009B9D75 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "Libs/AFNetworking-master/UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = SOURCE_ROOT; };
+		84C131561AFC59CD009B9D75 /* RDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHelper.m; sourceTree = "<group>"; };
+		84C131581AFC5A10009B9D75 /* RDHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RDHelper.h; sourceTree = "<group>"; };
 		84C688EA1AF9DDDE00CCAB96 /* MainTableCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableCell.h; sourceTree = "<group>"; };
 		84C688EB1AF9DDDE00CCAB96 /* MainTableCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableCell.m; sourceTree = "<group>"; };
 		84C688EC1AF9DDDE00CCAB96 /* MainTableCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainTableCell.xib; sourceTree = "<group>"; };
@@ -161,6 +164,8 @@
 				84C1302E1AFB2063009B9D75 /* DetailViewController.h */,
 				84C1302F1AFB2063009B9D75 /* DetailViewController.m */,
 				84C130301AFB2063009B9D75 /* DetailViewController.xib */,
+				84C131561AFC59CD009B9D75 /* RDHelper.m */,
+				84C131581AFC5A10009B9D75 /* RDHelper.h */,
 			);
 			path = GLNews;
 			sourceTree = "<group>";
@@ -369,6 +374,7 @@
 				84C131481AFB4780009B9D75 /* AFHTTPRequestOperationManager.m in Sources */,
 				84BF0DEB1AF9F3E8004AB5CB /* TFHpple.m in Sources */,
 				84C1314E1AFB4780009B9D75 /* AFURLResponseSerialization.m in Sources */,
+				84C131571AFC59CE009B9D75 /* RDHelper.m in Sources */,
 				84C688FB1AF9E70C00CCAB96 /* NewsElement.m in Sources */,
 				847CCA421AF9B0D100810019 /* AppDelegate.m in Sources */,
 				847CCA3F1AF9B0D100810019 /* main.m in Sources */,

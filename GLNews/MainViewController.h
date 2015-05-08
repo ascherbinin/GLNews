@@ -14,4 +14,8 @@
 @property (nonatomic,strong) IBOutlet UITableView *sampleTableView;
 @property (retain, nonatomic) DetailViewController *detailViewController;
 
+@property (strong, nonatomic) NSMutableArray *objects;
+
+@property int pageNumber;
+
 @end
