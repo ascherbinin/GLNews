@@ -14,14 +14,19 @@
 
 @interface DetailViewController ()  <UIActionSheetDelegate>
 
+@property int yOffset;
+
 @end
 
 @implementation DetailViewController
 
 @synthesize titleLable;
+@synthesize yOffset;
 
 - (void)viewDidLoad {
+    
     [super viewDidLoad];
+    
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Open"
                                                              style:UIBarButtonItemStylePlain
                                                             target:self
@@ -29,6 +34,11 @@
     self.navigationItem.rightBarButtonItem = item;
     
     [self roundMyView:titleLable borderRadius:5.0f borderWidth:1.0f color:[UIColor orangeColor]];
+    
+    yOffset = _imageView.frame.size.height + titleLable.frame.size.height + 10;
+    NSLog(@"ImageView Size - %f", _imageView.frame.size.height);
+    NSLog(@"Label Size - %f", titleLable.frame.size.height);
+    NSLog(@"START OFFSET - %d", yOffset);
     
     [self reloadData];
 }
@@ -75,20 +85,64 @@
     {
         return;
     }
+    
+    
+    NSLog(@"%@",_newsElementDetail.imageUrl);
+    
     self.navigationItem.title = _newsElementDetail.dateNewsText;
     self.titleLable.text = _newsElementDetail.titleText;
     
 
     NSArray *articleNodes = [RDHelper requestData:_newsElementDetail.articleUrl xPathQueryStr:@"//div[@class='topic-content text']"];
     
-    
+    NSMutableAttributedString *resultStr = [[NSMutableAttributedString alloc] initWithString:@""];
    
     for (TFHppleElement *element in articleNodes)
     {
- 
-       self.textView.text = [[element content] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+        for (TFHppleElement *child in element.children) {
+            
+            if ([child.tagName isEqual:@"img"])
+            {
+                // then setting imageView
+                UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(0, yOffset, _scrollView.frame.size.width-10, _scrollView.frame.size.width*9/16)];
+                imageView.contentMode = UIViewContentModeScaleAspectFit;
+                [imageView setImageWithURL:[NSURL URLWithString:[child objectForKey:@"src"]]];
+                NSLog(@"Child - %@, image url - %@",[child content],[child objectForKey:@"src"]);
+                
+                [_scrollView addSubview:imageView];
+                yOffset += imageView.frame.size.height+10;
+                NSLog(@"OFFSET after add view - %d", yOffset);
+            }
+            // else appending text variable
+            else if([child.tagName characterAtIndex:0] == 'h')
+            {
+                [resultStr appendAttributedString:[[NSAttributedString alloc] initWithString: [NSString stringWithFormat:@"\n%@\n", child.content]
+                                                                                  attributes:@{NSFontAttributeName:[UIFont fontWithName:@"Helvetica-Bold" size:15.0f]}]];
+                
+               
+            }
+            else
+            {
+                NSAttributedString *tempString = [[NSAttributedString alloc] initWithString:@""];
+                NSString *tempTrimString = [[child content]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet] ];
+                
+                tempString = [[NSAttributedString alloc] initWithString:tempTrimString];
+                
+               
+                [resultStr appendAttributedString:tempString];
+            }
 
+        }
+       
+        
+        self.textView.attributedText = resultStr ;
+        NSLog(@"ContentView size - %f",_contentView.frame.size.height);
+        NSLog(@"ScrollView size - %f",_scrollView.frame.size.height);
+        NSLog(@"TextView size - %f",_textView.frame.size.height);
+      
     }
+    
+    
     
     if(_newsElementDetail.imageUrl != nil)
     {
@@ -100,8 +154,7 @@
     {
         self.imageView.image = [UIImage imageNamed:@"glnews.png"];
     }
-    
-    NSLog(@"%@",_newsElementDetail.imageUrl);
+
 }
 
 - (void)roundMyView:(UIView*)view

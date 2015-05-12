@@ -82,8 +82,8 @@
                                             <exclude reference="kh3-ss-C1i"/>
                                         </mask>
                                     </variation>
-                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                        <rect key="frame" x="8" y="329" width="384" height="479"/>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                                         <mask key="constraints">
                                             <include reference="kh3-ss-C1i"/>
                                         </mask>
@@ -136,8 +136,7 @@
                                     <exclude reference="lYr-lb-wB2"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
-                                <rect key="frame" x="0.0" y="0.0" width="400" height="808"/>
+                            <variation key="heightClass=regular-widthClass=compact">
                                 <mask key="subviews">
                                     <include reference="kWS-XM-yof"/>
                                     <include reference="VVV-n8-GDo"/>
