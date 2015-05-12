@@ -18,6 +18,8 @@
 
 @implementation DetailViewController
 
+@synthesize titleLable;
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Open"
@@ -25,6 +27,8 @@
                                                             target:self
                                                             action:@selector(openNews)];
     self.navigationItem.rightBarButtonItem = item;
+    
+    [self roundMyView:titleLable borderRadius:5.0f borderWidth:1.0f color:[UIColor orangeColor]];
     
     [self reloadData];
 }
@@ -98,6 +102,18 @@
     }
     
     NSLog(@"%@",_newsElementDetail.imageUrl);
+}
+
+- (void)roundMyView:(UIView*)view
+       borderRadius:(CGFloat)radius
+        borderWidth:(CGFloat)border
+              color:(UIColor*)color
+{
+    CALayer *layer = [view layer];
+    layer.masksToBounds = YES;
+    layer.cornerRadius = radius;
+    layer.borderWidth = border;
+    layer.borderColor = color.CGColor;
 }
 
 /*

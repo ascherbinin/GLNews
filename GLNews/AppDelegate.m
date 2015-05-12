@@ -9,6 +9,8 @@
 #import "AppDelegate.h"
 #import "MainViewController.h"
 
+
+
 @interface AppDelegate ()
 
 @end
@@ -16,6 +18,9 @@
 @implementation AppDelegate
 
 @synthesize navigationController = _navigationController;
+@synthesize managedObjectContext = _managedObjectContext;
+@synthesize managedObjectModel = _managedObjectModel;
+@synthesize persistentStoreCoordinator = _persistentStoreCoordinator;
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
@@ -24,6 +29,22 @@
     
     self.navigationController = [[UINavigationController alloc] initWithRootViewController:mainViewController];
     self.window.rootViewController = self.navigationController;
+    
+    NSManagedObjectContext *context = [self managedObjectContext];
+    NSFetchRequest *request = [[NSFetchRequest alloc] init];
+    NSEntityDescription *entity = [NSEntityDescription entityForName:@"News" inManagedObjectContext:context];
+    [request setEntity:entity];
+    NSArray *results = [context executeFetchRequest:request error:nil];
+    
+    for(NSManagedObject *object in results){
+        NSLog(@"Found %@", [object valueForKey:@"launchCount"]);
+    }
+    
+    NSString *launchTitle = [NSString stringWithFormat:@"launch %lu", (unsigned long)[results count]];
+    NSManagedObject *object = [NSEntityDescription insertNewObjectForEntityForName:[entity name] inManagedObjectContext:context];
+    [object setValue:launchTitle forKey:@"launchCount"];
+    [self saveContext];
+    NSLog(@"Added : %@", launchTitle);
    
     
     self.window.backgroundColor = [UIColor whiteColor];
@@ -51,6 +72,66 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+
+- (NSURL *)applicationDocumentsDirectory{
+    return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+}
+
+- (void)saveContext {
+    NSError *error = nil;
+    NSManagedObjectContext *managedObjectContext = [self managedObjectContext];
+    
+    if(managedObjectContext != nil) {
+        if([managedObjectContext hasChanges] && ![managedObjectContext save:&error]){
+            NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+            abort();
+        }
+    }
+}
+
+
+- (NSManagedObjectModel *)managedObjectModel {
+    if (_managedObjectModel != nil){
+        return _managedObjectModel;
+    }
+    
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"NewsModel" withExtension:@"momd"];
+    _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
+    
+    return _managedObjectModel;
+}
+
+- (NSPersistentStoreCoordinator *)persistentStoreCoordinator {
+    if(_persistentStoreCoordinator != nil){
+        return _persistentStoreCoordinator;
+    }
+    
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"GLNews.sqlite"];
+    
+    NSError *error = nil;
+    _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel: [self managedObjectModel]];
+    if(![_persistentStoreCoordinator addPersistentStoreWithType:NSSQLiteStoreType configuration:nil URL:storeURL options:nil error:&error]){
+        NSLog(@"Unresolved error %@, %@", error, [error userInfo]);
+        abort();
+    }
+    
+    return _persistentStoreCoordinator;
+}
+
+- (NSManagedObjectContext *)managedObjectContext {
+    if(_managedObjectContext != nil){
+        return _managedObjectContext;
+    }
+    
+    NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
+    if(coordinator != nil){
+        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        [_managedObjectContext setPersistentStoreCoordinator:coordinator];
+    }
+    
+    return _managedObjectContext;
 }
 
 @end

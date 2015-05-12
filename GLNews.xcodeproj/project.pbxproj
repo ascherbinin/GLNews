@@ -25,6 +25,8 @@
 		84C688F71AF9E2EF00CCAB96 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688F51AF9E2EF00CCAB96 /* MainViewController.m */; };
 		84C688F81AF9E2EF00CCAB96 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C688F61AF9E2EF00CCAB96 /* MainViewController.xib */; };
 		84C688FB1AF9E70C00CCAB96 /* NewsElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688FA1AF9E70C00CCAB96 /* NewsElement.m */; };
+		84D4C0FB1B01AD2A002D49A6 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 84D4C0FA1B01AD29002D49A6 /* CoreData.framework */; };
+		84D4C0FE1B01AD58002D49A6 /* NewsModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 84D4C0FC1B01AD58002D49A6 /* NewsModel.xcdatamodeld */; };
 		BEB47775F02B30BFE14EA98C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546B4E537F512FEEBCE00491 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -73,6 +75,8 @@
 		84C688F61AF9E2EF00CCAB96 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		84C688F91AF9E70C00CCAB96 /* NewsElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsElement.h; sourceTree = "<group>"; };
 		84C688FA1AF9E70C00CCAB96 /* NewsElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsElement.m; sourceTree = "<group>"; };
+		84D4C0FA1B01AD29002D49A6 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		84D4C0FD1B01AD58002D49A6 /* NewsModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = NewsModel.xcdatamodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84D4C0FB1B01AD2A002D49A6 /* CoreData.framework in Frameworks */,
 				84BF0DEF1AF9F516004AB5CB /* libxml2.dylib in Frameworks */,
 				BEB47775F02B30BFE14EA98C /* libPods.a in Frameworks */,
 			);
@@ -107,6 +112,7 @@
 		6C20D463A9DEA6E0BA1B2C27 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				84D4C0FA1B01AD29002D49A6 /* CoreData.framework */,
 				546B4E537F512FEEBCE00491 /* libPods.a */,
 			);
 			name = Frameworks;
@@ -136,6 +142,7 @@
 		847CCA3B1AF9B0D100810019 /* GLNews */ = {
 			isa = PBXGroup;
 			children = (
+				84D4C0FC1B01AD58002D49A6 /* NewsModel.xcdatamodeld */,
 				84C1315B1AFCA81E009B9D75 /* Resource */,
 				84BF0DE41AF9F3AA004AB5CB /* hpple */,
 				84BF0DE31AF9F361004AB5CB /* Model */,
@@ -365,6 +372,7 @@
 				84BF0DEC1AF9F3E8004AB5CB /* TFHppleElement.m in Sources */,
 				84C130311AFB2063009B9D75 /* DetailViewController.m in Sources */,
 				84BF0DED1AF9F3E8004AB5CB /* XPathQuery.m in Sources */,
+				84D4C0FE1B01AD58002D49A6 /* NewsModel.xcdatamodeld in Sources */,
 				84BF0DEB1AF9F3E8004AB5CB /* TFHpple.m in Sources */,
 				84C131571AFC59CE009B9D75 /* RDHelper.m in Sources */,
 				84C688FB1AF9E70C00CCAB96 /* NewsElement.m in Sources */,
@@ -562,6 +570,20 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		84D4C0FC1B01AD58002D49A6 /* NewsModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				84D4C0FD1B01AD58002D49A6 /* NewsModel.xcdatamodel */,
+			);
+			currentVersion = 84D4C0FD1B01AD58002D49A6 /* NewsModel.xcdatamodel */;
+			name = NewsModel.xcdatamodeld;
+			path = ../NewsModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 847CCA311AF9B0D100810019 /* Project object */;
 }

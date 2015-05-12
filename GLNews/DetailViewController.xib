@@ -45,13 +45,13 @@
                                         </mask>
                                     </variation>
                                 </imageView>
-                                <label userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVV-n8-GDo">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" highlighted="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VVV-n8-GDo">
                                     <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.80000000000000004" colorSpace="calibratedWhite"/>
+                                    <color key="backgroundColor" red="0.16862745100000001" green="0.72156862749999995" blue="0.1529411765" alpha="1" colorSpace="calibratedRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="50" id="BOC-XT-34n"/>
                                     </constraints>
-                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="default">
@@ -60,7 +60,7 @@
                                         </mask>
                                     </variation>
                                     <variation key="heightClass=regular-widthClass=compact">
-                                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="15"/>
                                         <mask key="constraints">
                                             <include reference="BOC-XT-34n"/>
                                         </mask>
@@ -82,7 +82,8 @@
                                             <exclude reference="kh3-ss-C1i"/>
                                         </mask>
                                     </variation>
-                                    <variation key="heightClass=regular-widthClass=compact">
+                                    <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                        <rect key="frame" x="8" y="329" width="384" height="479"/>
                                         <mask key="constraints">
                                             <include reference="kh3-ss-C1i"/>
                                         </mask>
@@ -95,7 +96,7 @@
                                 <constraint firstItem="BgT-hM-V8C" firstAttribute="leading" secondItem="V6B-CT-U9v" secondAttribute="leadingMargin" id="DiB-jW-N1C"/>
                                 <constraint firstItem="kWS-XM-yof" firstAttribute="centerX" secondItem="BgT-hM-V8C" secondAttribute="centerX" id="Tli-rl-rAR"/>
                                 <constraint firstItem="BgT-hM-V8C" firstAttribute="top" secondItem="V6B-CT-U9v" secondAttribute="top" constant="376" id="Wkm-tc-lpJ">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="346"/>
+                                    <variation key="heightClass=regular-widthClass=compact" constant="329"/>
                                 </constraint>
                                 <constraint firstItem="kWS-XM-yof" firstAttribute="top" secondItem="V6B-CT-U9v" secondAttribute="top" constant="128" id="Y6k-1V-89r">
                                     <variation key="heightClass=regular-widthClass=compact" constant="43"/>
@@ -104,7 +105,7 @@
                                     <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                 </constraint>
                                 <constraint firstItem="VVV-n8-GDo" firstAttribute="bottom" secondItem="kWS-XM-yof" secondAttribute="bottom" id="ktj-Ir-7Lv">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    <variation key="heightClass=regular-widthClass=compact" constant="36"/>
                                 </constraint>
                                 <constraint firstAttribute="trailing" secondItem="VVV-n8-GDo" secondAttribute="trailing" constant="19" id="lCW-Mt-rff">
                                     <variation key="heightClass=regular-widthClass=compact" constant="8"/>
@@ -135,7 +136,8 @@
                                     <exclude reference="lYr-lb-wB2"/>
                                 </mask>
                             </variation>
-                            <variation key="heightClass=regular-widthClass=compact">
+                            <variation key="heightClass=regular-widthClass=compact" misplaced="YES">
+                                <rect key="frame" x="0.0" y="0.0" width="400" height="808"/>
                                 <mask key="subviews">
                                     <include reference="kWS-XM-yof"/>
                                     <include reference="VVV-n8-GDo"/>
