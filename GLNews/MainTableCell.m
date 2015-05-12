@@ -14,6 +14,7 @@
 @synthesize titleNews;
 @synthesize descriptionNews;
 @synthesize dateNews;
+@synthesize imageView;
 
 - (void)awakeFromNib {
    
@@ -21,7 +22,7 @@
     
     
     [self roundMyView:imageNews borderRadius:5.0f borderWidth:1.5f color:[UIColor orangeColor]];
-    [self roundMyView:titleNews borderRadius:3.0f borderWidth:1.0f color:[UIColor orangeColor]];
+    [self roundMyView:imageView borderRadius:3.0f borderWidth:1.0f color:[UIColor orangeColor]];
     //titleNews.backgroundColor = [UIColor greenColor];
     
     
