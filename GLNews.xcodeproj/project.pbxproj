@@ -25,6 +25,17 @@
 		84C688F71AF9E2EF00CCAB96 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688F51AF9E2EF00CCAB96 /* MainViewController.m */; };
 		84C688F81AF9E2EF00CCAB96 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 84C688F61AF9E2EF00CCAB96 /* MainViewController.xib */; };
 		84C688FB1AF9E70C00CCAB96 /* NewsElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 84C688FA1AF9E70C00CCAB96 /* NewsElement.m */; };
+		93CA179A1B04A19500748ACF /* glnews.png in Resources */ = {isa = PBXBuildFile; fileRef = 93CA17991B04A19500748ACF /* glnews.png */; };
+		93CA179F1B04B55D00748ACF /* NewsElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA179C1B04B55D00748ACF /* NewsElement.m */; };
+		93CA17A01B04B55D00748ACF /* RDHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA179E1B04B55D00748ACF /* RDHelper.m */; };
+		93CA17A71B04B59600748ACF /* TFHpple.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA17A21B04B59600748ACF /* TFHpple.m */; };
+		93CA17A81B04B59600748ACF /* TFHppleElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA17A41B04B59600748ACF /* TFHppleElement.m */; };
+		93CA17A91B04B59600748ACF /* XPathQuery.m in Sources */ = {isa = PBXBuildFile; fileRef = 93CA17A61B04B59600748ACF /* XPathQuery.m */; };
+		93CA17AB1B04B5F700748ACF /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 84BF0DEE1AF9F516004AB5CB /* libxml2.dylib */; };
+		93E19D3D1B0455EE00171133 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 93E19D3C1B0455EE00171133 /* NotificationCenter.framework */; };
+		93E19D431B0455EE00171133 /* TodayWidgetViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 93E19D421B0455EE00171133 /* TodayWidgetViewController.m */; };
+		93E19D481B0455EE00171133 /* GLNews Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 93E19D3B1B0455EE00171133 /* GLNews Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		93E19D501B04597100171133 /* TodayWidgetViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 93E19D4F1B04597100171133 /* TodayWidgetViewController.xib */; };
 		BEB47775F02B30BFE14EA98C /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 546B4E537F512FEEBCE00491 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -36,7 +47,28 @@
 			remoteGlobalIDString = 847CCA381AF9B0D100810019;
 			remoteInfo = GLNews;
 		};
+		93E19D461B0455EE00171133 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 847CCA311AF9B0D100810019 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 93E19D3A1B0455EE00171133;
+			remoteInfo = "GLNews Widget";
+		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		93E19D4C1B0455EE00171133 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				93E19D481B0455EE00171133 /* GLNews Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		546B4E537F512FEEBCE00491 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +105,23 @@
 		84C688F61AF9E2EF00CCAB96 /* MainViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
 		84C688F91AF9E70C00CCAB96 /* NewsElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsElement.h; sourceTree = "<group>"; };
 		84C688FA1AF9E70C00CCAB96 /* NewsElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsElement.m; sourceTree = "<group>"; };
+		93CA17991B04A19500748ACF /* glnews.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = glnews.png; sourceTree = "<group>"; };
+		93CA179B1B04B55D00748ACF /* NewsElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewsElement.h; sourceTree = "<group>"; };
+		93CA179C1B04B55D00748ACF /* NewsElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewsElement.m; sourceTree = "<group>"; };
+		93CA179D1B04B55D00748ACF /* RDHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDHelper.h; sourceTree = "<group>"; };
+		93CA179E1B04B55D00748ACF /* RDHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDHelper.m; sourceTree = "<group>"; };
+		93CA17A11B04B59600748ACF /* TFHpple.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHpple.h; sourceTree = "<group>"; };
+		93CA17A21B04B59600748ACF /* TFHpple.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHpple.m; sourceTree = "<group>"; };
+		93CA17A31B04B59600748ACF /* TFHppleElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TFHppleElement.h; sourceTree = "<group>"; };
+		93CA17A41B04B59600748ACF /* TFHppleElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TFHppleElement.m; sourceTree = "<group>"; };
+		93CA17A51B04B59600748ACF /* XPathQuery.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XPathQuery.h; sourceTree = "<group>"; };
+		93CA17A61B04B59600748ACF /* XPathQuery.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XPathQuery.m; sourceTree = "<group>"; };
+		93E19D3B1B0455EE00171133 /* GLNews Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "GLNews Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93E19D3C1B0455EE00171133 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		93E19D401B0455EE00171133 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		93E19D411B0455EE00171133 /* TodayWidgetViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TodayWidgetViewController.h; sourceTree = "<group>"; };
+		93E19D421B0455EE00171133 /* TodayWidgetViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TodayWidgetViewController.m; sourceTree = "<group>"; };
+		93E19D4F1B04597100171133 /* TodayWidgetViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TodayWidgetViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +141,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		93E19D381B0455EE00171133 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93CA17AB1B04B5F700748ACF /* libxml2.dylib in Frameworks */,
+				93E19D3D1B0455EE00171133 /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -108,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				546B4E537F512FEEBCE00491 /* libPods.a */,
+				93E19D3C1B0455EE00171133 /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -118,6 +177,7 @@
 				84BF0DEE1AF9F516004AB5CB /* libxml2.dylib */,
 				847CCA3B1AF9B0D100810019 /* GLNews */,
 				847CCA551AF9B0D100810019 /* GLNewsTests */,
+				93E19D3E1B0455EE00171133 /* GLNews Widget */,
 				847CCA3A1AF9B0D100810019 /* Products */,
 				2C9EF860846125018342D3A4 /* Pods */,
 				6C20D463A9DEA6E0BA1B2C27 /* Frameworks */,
@@ -129,6 +189,7 @@
 			children = (
 				847CCA391AF9B0D100810019 /* GLNews.app */,
 				847CCA521AF9B0D100810019 /* GLNewsTests.xctest */,
+				93E19D3B1B0455EE00171133 /* GLNews Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -223,6 +284,44 @@
 			name = Images;
 			sourceTree = "<group>";
 		};
+		93CA17AA1B04B5CA00748ACF /* hpple */ = {
+			isa = PBXGroup;
+			children = (
+				93CA17A11B04B59600748ACF /* TFHpple.h */,
+				93CA17A21B04B59600748ACF /* TFHpple.m */,
+				93CA17A31B04B59600748ACF /* TFHppleElement.h */,
+				93CA17A41B04B59600748ACF /* TFHppleElement.m */,
+				93CA17A51B04B59600748ACF /* XPathQuery.h */,
+				93CA17A61B04B59600748ACF /* XPathQuery.m */,
+			);
+			name = hpple;
+			sourceTree = "<group>";
+		};
+		93E19D3E1B0455EE00171133 /* GLNews Widget */ = {
+			isa = PBXGroup;
+			children = (
+				93CA17AA1B04B5CA00748ACF /* hpple */,
+				93CA179B1B04B55D00748ACF /* NewsElement.h */,
+				93CA179C1B04B55D00748ACF /* NewsElement.m */,
+				93CA179D1B04B55D00748ACF /* RDHelper.h */,
+				93CA179E1B04B55D00748ACF /* RDHelper.m */,
+				93CA17991B04A19500748ACF /* glnews.png */,
+				93E19D4F1B04597100171133 /* TodayWidgetViewController.xib */,
+				93E19D411B0455EE00171133 /* TodayWidgetViewController.h */,
+				93E19D421B0455EE00171133 /* TodayWidgetViewController.m */,
+				93E19D3F1B0455EE00171133 /* Supporting Files */,
+			);
+			path = "GLNews Widget";
+			sourceTree = "<group>";
+		};
+		93E19D3F1B0455EE00171133 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				93E19D401B0455EE00171133 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -235,10 +334,12 @@
 				847CCA361AF9B0D100810019 /* Frameworks */,
 				847CCA371AF9B0D100810019 /* Resources */,
 				9F9503D1A78ACAB3DD0699A3 /* Copy Pods Resources */,
+				93E19D4C1B0455EE00171133 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				93E19D471B0455EE00171133 /* PBXTargetDependency */,
 			);
 			name = GLNews;
 			productName = GLNews;
@@ -263,6 +364,23 @@
 			productReference = 847CCA521AF9B0D100810019 /* GLNewsTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		93E19D3A1B0455EE00171133 /* GLNews Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 93E19D4B1B0455EE00171133 /* Build configuration list for PBXNativeTarget "GLNews Widget" */;
+			buildPhases = (
+				93E19D371B0455EE00171133 /* Sources */,
+				93E19D381B0455EE00171133 /* Frameworks */,
+				93E19D391B0455EE00171133 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "GLNews Widget";
+			productName = "GLNews Widget";
+			productReference = 93E19D3B1B0455EE00171133 /* GLNews Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -278,6 +396,9 @@
 					847CCA511AF9B0D100810019 = {
 						CreatedOnToolsVersion = 6.3.1;
 						TestTargetID = 847CCA381AF9B0D100810019;
+					};
+					93E19D3A1B0455EE00171133 = {
+						CreatedOnToolsVersion = 6.3.1;
 					};
 				};
 			};
@@ -296,6 +417,7 @@
 			targets = (
 				847CCA381AF9B0D100810019 /* GLNews */,
 				847CCA511AF9B0D100810019 /* GLNewsTests */,
+				93E19D3A1B0455EE00171133 /* GLNews Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -318,6 +440,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		93E19D391B0455EE00171133 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93E19D501B04597100171133 /* TodayWidgetViewController.xib in Resources */,
+				93CA179A1B04A19500748ACF /* glnews.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,6 +513,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		93E19D371B0455EE00171133 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				93E19D431B0455EE00171133 /* TodayWidgetViewController.m in Sources */,
+				93CA17A01B04B55D00748ACF /* RDHelper.m in Sources */,
+				93CA179F1B04B55D00748ACF /* NewsElement.m in Sources */,
+				93CA17A71B04B59600748ACF /* TFHpple.m in Sources */,
+				93CA17A91B04B59600748ACF /* XPathQuery.m in Sources */,
+				93CA17A81B04B59600748ACF /* TFHppleElement.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -389,6 +533,11 @@
 			isa = PBXTargetDependency;
 			target = 847CCA381AF9B0D100810019 /* GLNews */;
 			targetProxy = 847CCA531AF9B0D100810019 /* PBXContainerItemProxy */;
+		};
+		93E19D471B0455EE00171133 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 93E19D3A1B0455EE00171133 /* GLNews Widget */;
+			targetProxy = 93E19D461B0455EE00171133 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -531,6 +680,30 @@
 			};
 			name = Release;
 		};
+		93E19D491B0455EE00171133 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "GLNews Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		93E19D4A1B0455EE00171133 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = "GLNews Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -557,6 +730,15 @@
 			buildConfigurations = (
 				847CCA601AF9B0D100810019 /* Debug */,
 				847CCA611AF9B0D100810019 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		93E19D4B1B0455EE00171133 /* Build configuration list for PBXNativeTarget "GLNews Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				93E19D491B0455EE00171133 /* Debug */,
+				93E19D4A1B0455EE00171133 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
