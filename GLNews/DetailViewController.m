@@ -8,9 +8,10 @@
 
 #import "DetailViewController.h"
 #import "NewsElement.h"
-#import "UIImageView+AFNetworking.h"
 #import "TFHpple.h"
 #import "RDHelper.h"
+#import "UIImageView+AFNetworking.h"
+
 
 @interface DetailViewController ()  <UIActionSheetDelegate>
 
@@ -20,10 +21,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithTitle:@"Open"
-                                                             style:UIBarButtonItemStylePlain
-                                                            target:self
-                                                            action:@selector(openNews)];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAction target:self action:@selector(openNews)];
     self.navigationItem.rightBarButtonItem = item;
     
     [self reloadData];
@@ -46,7 +44,7 @@
 -(void)openNews
 {
    
-    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Назад" destructiveButtonTitle:nil otherButtonTitles:@"Открыть",@"Открыть в браузере", nil];
+    UIActionSheet *actionSheet = [[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"Назад" destructiveButtonTitle:nil otherButtonTitles:@"Открыть в браузере", nil];
     
     [actionSheet showInView:self.view];
 }
@@ -55,9 +53,6 @@
 {
     switch (buttonIndex) {
         case 0:
-            
-            break;
-        case 1:
             [[UIApplication sharedApplication] openURL:_newsElementDetail.articleUrl];
             break;
         default:

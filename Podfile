@@ -1,3 +1,6 @@
 source 'https://github.com/CocoaPods/Specs.git'
-platform :ios, '7.0'
+
+link_with 'GLNews', 'GLNews Widget'
 pod 'AFNetworking', '~> 2.5'
+pod 'hpple', '~> 0.2'
+

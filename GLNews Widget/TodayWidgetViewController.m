@@ -11,7 +11,8 @@
 #import "NewsElement.h"
 #import "TFHpple.h"
 #import "RDHelper.h"
-//#import ""
+#import "AFNetworking.h"
+
 
 @interface TodayWidgetViewController () <NCWidgetProviding>
 
@@ -86,9 +87,7 @@
             ne.descriptionText =[[descriptionElement content] stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
             
             NSString *dateString = [[[titleElement firstChildWithTagName:@"time"]content]stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
-            NSScanner *scanner = [[NSScanner alloc] initWithString:dateString];
-            [scanner scanUpToString:@"," intoString:nil];
-            ne.dateNewsText = [dateString substringWithRange:NSMakeRange(0, scanner.scanLocation)];
+            ne.dateNewsText = dateString;
             
             TFHppleElement *imageNode = [[imageElement firstChildWithTagName:@"a"] firstChildWithTagName:@"img"];
             
@@ -103,7 +102,7 @@
             [_objects addObject:ne];
         }
         
-        NewsElement *news = [_objects objectAtIndex:0];
+        NewsElement *news = [_objects objectAtIndex:1];
         NSArray* images = [news imagesFromContent:news.imageUrl];
         NSString *imageStringURL = [images objectAtIndex:0];
         NSURL* imageURL = [NSURL URLWithString: imageStringURL];
@@ -133,12 +132,12 @@
        
         
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 0, 150, 30)];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(80, 15, 150, 30)];
         
         [titleLabel setTextColor:[UIColor whiteColor]];
         [titleLabel setBackgroundColor:[UIColor clearColor]];
-        [titleLabel setFont:[UIFont fontWithName: @"Trebuchet MS-Bold" size: 11.0f]];
-        titleLabel.numberOfLines =2;
+        [titleLabel setFont:[UIFont fontWithName: @"Trebuchet MS-Bold" size: 10.0f]];
+        titleLabel.numberOfLines =1;
         [titleLabel setText:[NSString stringWithString:news.dateNewsText]];
         [self.view addSubview:titleLabel];
         
@@ -147,7 +146,7 @@
         
         [descriprionLabel setTextColor:[UIColor lightGrayColor]];
         [descriprionLabel setBackgroundColor:[UIColor clearColor]];
-        [descriprionLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 14.0f]];
+        [descriprionLabel setFont:[UIFont fontWithName: @"Trebuchet MS" size: 15.0f]];
         descriprionLabel.numberOfLines =0;
         [descriprionLabel setText:[NSString stringWithString:news.titleText]];
         [self.view addSubview:descriprionLabel];

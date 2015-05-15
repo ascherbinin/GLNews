@@ -12,5 +12,6 @@
 
 
 +(NSArray*)requestData:(NSURL*)urlString xPathQueryStr:(NSString*)xpathQueryString;
++(NSMutableArray*)parsToArray:(NSArray*)arrayToPars;
 
 @end
